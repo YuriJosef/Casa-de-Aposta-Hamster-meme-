@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HamsterRush 🐹</title>
 
-<!-- Google Font para deixar mais moderno -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-    /* Reset básico */
     * {
         margin: 0;
         padding: 0;
@@ -45,7 +43,6 @@
         font-weight: bold;
     }
 
-    /* Área principal */
     .container {
         padding: 40px;
         text-align: center;
@@ -56,7 +53,6 @@
         font-weight: 600;
     }
 
-    /* Cards dos hamsters */
     .hamsters {
         display: flex;
         justify-content: center;
@@ -91,7 +87,6 @@
         margin-top: 10px;
     }
 
-    /* Botão principal */
     .btn {
         background: linear-gradient(45deg, #ffcc00, #ff8800);
         padding: 15px 40px;
@@ -108,7 +103,6 @@
         box-shadow: 0 0 15px #ffcc00;
     }
 
-    /* Área da corrida */
     .race-track {
         margin-top: 50px;
         height: 200px;
@@ -170,7 +164,6 @@
     <button class="btn" onclick="iniciarCorrida()">INICIAR CORRIDA</button>
 
     <div class="race-track">
-        <!-- Hamsters visualmente correndo -->
         <div id="Flash" class="runner" style="top:20px;">🐹</div>
         <div id="Thor" class="runner" style="top:80px;">🐹</div>
         <div id="Ninja" class="runner" style="top:140px;">🐹</div>
@@ -186,13 +179,11 @@
 
 let escolhido = null;
 
-// Função para selecionar o hamster
 function selecionar(nome) {
     escolhido = nome;
     alert("Você escolheu o hamster " + nome + " 🐹🔥");
 }
 
-// Função que inicia a corrida
 function iniciarCorrida() {
 
     if(!escolhido){
@@ -200,7 +191,6 @@ function iniciarCorrida() {
         return;
     }
 
-    // Gera distâncias aleatórias para simular corrida
     const flash = Math.random() * 80 + 10;
     const thor = Math.random() * 80 + 10;
     const ninja = Math.random() * 80 + 10;
@@ -209,7 +199,6 @@ function iniciarCorrida() {
     document.getElementById("Thor").style.left = thor + "%";
     document.getElementById("Ninja").style.left = ninja + "%";
 
-    // Descobrir vencedor
     setTimeout(() => {
         const maior = Math.max(flash, thor, ninja);
         let vencedor;
@@ -224,7 +213,6 @@ function iniciarCorrida() {
             alert("😢 Não foi dessa vez. O vencedor foi " + vencedor);
         }
 
-        // Resetar corrida
         document.getElementById("Flash").style.left = "0";
         document.getElementById("Thor").style.left = "0";
         document.getElementById("Ninja").style.left = "0";
